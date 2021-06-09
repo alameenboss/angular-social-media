@@ -1,0 +1,61 @@
+<div class="posty" *ngFor="let p of posts">
+    <div class="post-bar no-margin">
+        <div class="post_topbar">
+            <div class="usy-dt">
+                <img src="{{p.ImageUrl}}" alt="">
+                <div class="usy-name">
+                    <h3>{{p.Name}}</h3>
+                    <span><img src="assets/images/clock.png" alt="">{{p.PostedTime}}</span>
+                </div>
+            </div>
+            <div class="ed-opts">
+                <a routerLink="/" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                <ul class="ed-options">
+                    <li><a routerLink="/" title="">Edit Post</a></li>
+                    <li><a routerLink="/" title="">Unsaved</a></li>
+                    <li><a routerLink="/" title="">Unbid</a></li>
+                    <li><a routerLink="/" title="">Close</a></li>
+                    <li><a routerLink="/" title="">Hide</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="epi-sec">
+            <ul class="descp">
+                <li *ngFor="let tag of p.Tags">
+                    <img src="{{tag.icon}}" alt="">
+                    <span>{{tag.desc}}</span>
+                </li>
+            </ul>
+            <ul class="bk-links">
+                <li><a routerLink="/" title=""><i class="la la-bookmark"></i></a></li>
+                <li><a routerLink="/" title=""><i class="la la-envelope"></i></a></li>
+                <li><a routerLink="/" title="" class="bid_now">Bid Now</a></li>
+            </ul>
+        </div>
+        <div class="job_descp">
+            <h3>{{p.Designation}}</h3>
+            <ul class="job-dt">
+                <li><a routerLink="/" title="">{{p.JobType}}</a></li>
+                <li><span>{{p.Rate}}</span></li>
+            </ul>
+            <p>{{p.PostText}}<a routerLink="/" title="">view more</a></p>
+            <ul class="skill-tags">
+                <li *ngFor="let tech of p.Technology">
+                    <a routerLink="/" title="">{{tech}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="job-status-bar">
+            <ul class="like-com">
+                <li>
+                    <a routerLink="/"><i class="fas fa-heart"></i> Like</a>
+                    <img src="assets/images/liked-img.png" alt="">
+                    <span>25</span>
+                </li>
+                <li><a routerLink="/" class="com"><i class="fas fa-comment-alt"></i> Comment 15</a></li>
+            </ul>
+            <a routerLink="/"><i class="fas fa-eye"></i>Views 50</a>
+        </div>
+    </div>
+    <app-post-comment [comments]="p.comments"></app-post-comment>
+</div>

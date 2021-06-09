@@ -1,0 +1,19 @@
+<div class="suggestions full-width">
+  <div class="sd-title">
+      <h3>{{title}}</h3>
+      <i class="la la-ellipsis-v"></i>
+  </div>
+  <div class="suggestions-list">
+      <div class="suggestion-usd" *ngFor="let item of suggestedUsers">
+          <img src="{{item.imagesrc}}" alt="">
+          <div class="sgt-text">
+              <h4>{{item.name}}</h4>
+              <span>{{item.designation}}</span>
+          </div>
+          <span><i class="la la-plus"></i></span>
+      </div>
+      <div class="view-more">
+          <a routerLink="/" title="">View More</a>
+      </div>
+  </div>
+</div>

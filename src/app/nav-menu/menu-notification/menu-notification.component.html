@@ -1,0 +1,23 @@
+<div class="notification-box msg" [ngStyle]="{'display': displayMessage ? 'block':'none'}">
+  <div class="nt-title">
+      <h4>Setting</h4>
+      <a  title="">Clear all</a>
+  </div>
+  <div class="nott-list">
+      <div class="notfication-details" *ngFor="let msg of messageList.messages" >
+            <div class="noty-user-img">
+                <img src="{{msg.userimageurl}}" alt="">
+            </div>
+            <div class="notification-info">
+                <h3><a>{{msg.username}}</a> </h3>
+                <p>{{msg.message}}</p>
+                <span>{{msg.time}}</span>
+            </div>
+        </div>
+        
+        <div class="view-all-nots">
+            <a routerLink="/messages" routerLinkActive="active" title="">{{messageList.title}}</a>
+        </div>
+  </div>
+</div>
+  
